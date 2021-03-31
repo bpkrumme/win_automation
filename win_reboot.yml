@@ -1,0 +1,12 @@
+---
+- name: reboot a system
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: reboot a system
+      ansible.windows.win_reboot:
+        reboot_timeout: 3600
+        msg: "Reboot intiated by Ansible for regular patching"
+        pre_reboot_delay: 60
+        post_reboot_delay: 60
