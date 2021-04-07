@@ -17,4 +17,4 @@
 
     - name: print output of winupdates registered variable
       debug:
-        msg: "{{ winupdates.results }}"
+        msg: "{{ winupdates }}"
