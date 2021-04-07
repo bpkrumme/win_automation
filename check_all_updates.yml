@@ -1,0 +1,20 @@
+---
+- name: check for available windows updates
+  hosts: all
+  gather_facts: false
+  collections:
+    - ansible.windows
+  tasks:
+    - name: check for available updates
+      ansible.windows.win_updates:
+        category_names:
+          - SecurityUpdates
+          - CriticalUpdates
+          - UpdateRollups
+        state: searched
+        log_path: C:\ansible_win_check_updates.txt
+      register: winupdates
+
+    - name: print output of winupdates registered variable
+      debug:
+        msg: "{{ winupdates.results }}"

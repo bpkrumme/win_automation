@@ -1,14 +1,14 @@
 ---
-- name: install windows security updates without rebooting
+- name: install all windows updates without rebooting
   hosts: all
   gather_facts: false
   collections:
     - ansible.windows
   tasks:
-    - name: install windows security updates
+    - name: install windows updates
       ansible.windows.win_updates:
         category_names:
           - SecurityUpdates
           - CriticalUpdates
           - UpdateRollups
-        log_path: C:\ansible_win_sec_updates.txt
+        log_path: C:\ansible_win_updates.txt
