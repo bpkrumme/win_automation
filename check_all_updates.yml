@@ -17,4 +17,4 @@
 
     - name: print output of winupdates registered variable
       debug:
-        msg: "There are {{ winupdates.found_update_count }} available for {{ inventory_host }}"
+        msg: "There are {{ winupdates.found_update_count }} available"
