@@ -7,10 +7,6 @@
   tasks:
     - name: check for available updates
       ansible.windows.win_updates:
-        category_names:
-          - SecurityUpdates
-          - CriticalUpdates
-          - UpdateRollups
         state: searched
         log_path: C:\ansible_win_check_updates.txt
       register: winupdates
