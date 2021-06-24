@@ -8,7 +8,16 @@
     - name: install windows updates
       ansible.windows.win_updates:
         category_names:
-          - SecurityUpdates
+          - Application
+          - Connectors
           - CriticalUpdates
+          - DefinitionUpdates
+          - DeveloperKits
+          - FeaturePacks
+          - Guidance
+          - SecurityUpdates
+          - ServicePacks
+          - Tools
           - UpdateRollups
+          - Updates
         log_path: C:\ansible_win_updates.txt
